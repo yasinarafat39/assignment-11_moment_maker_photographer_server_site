@@ -56,6 +56,9 @@ async function run() {
             res.send(reviews);
         })
 
+        app.delete('/reviews/:id', async (req, res) => {
+            
+        })
 
         // Current User reviews API
         app.get('/reviews/current', async (req, res) => {
