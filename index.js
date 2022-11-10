@@ -56,6 +56,22 @@ async function run() {
             res.send(reviews);
         })
 
+
+        // Current User reviews API
+        app.get('/reviews/current', async (req, res) => {
+            console.log(req.query.email);
+            let query = {};
+
+            if (req.query.email) {
+                query = {
+                    email: req.query.email
+                }
+            }
+            const cursor = reviewsCollection.find(query);
+            const reviews = await cursor.toArray();
+            res.send(reviews);
+        })
+
     }
     finally {
 
