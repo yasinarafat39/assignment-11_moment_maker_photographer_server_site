@@ -98,7 +98,7 @@ async function run() {
             const query = { _id: ObjectId(id) };
             const updatedDoc = {
                 $set: {
-                    status: status
+
                 }
             }
             const result = await reviewsCollection.updateOne(query, updatedDoc);
